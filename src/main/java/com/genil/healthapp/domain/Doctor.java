@@ -5,7 +5,6 @@ package com.genil.healthapp.domain;
 /**
  * Created by genil on 6/16/18 at 15 11
  **/
-import com.genil.healthapp.domain.User;
 
 import java.sql.Timestamp;
 
