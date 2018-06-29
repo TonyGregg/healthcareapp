@@ -17,9 +17,19 @@ import javax.servlet.http.HttpServletResponse;
  * @postHandle after processed by the controller
  * @afterCompletion after view rendered to view
  *
- * It has to be done for only a certain path.
- * so implement  WebMvcConfigurer in a class
+ * It has to be done for only a certain path of the URL.
+ * For this class to be invoked, implement  WebMvcConfigurer in a class
  * and call it as @Configuration
+ *
+ * e.g.
+ *
+ * @Configuration
+ * public class AppConfig implements WebMvcConfigurer {
+ *
+ *     @Override
+ *     public void addInterceptors(InterceptorRegistry registry) {
+ *         registry.addInterceptor(new SignupInterceptor()).addPathPatterns("/account/signup/process");
+ *     }
  *
  **/
 public class SignupInterceptor extends HandlerInterceptorAdapter {

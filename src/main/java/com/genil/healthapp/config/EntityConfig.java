@@ -2,7 +2,9 @@ package com.genil.healthapp.config;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +25,7 @@ import javax.sql.DataSource;
 @EntityScan("com.genil.healthapp.domain")
 @EnableTransactionManagement
 @PropertySource("classpath:application.properties")
-
+@EnableAutoConfiguration(exclude=HibernateJpaAutoConfiguration.class)
 public class EntityConfig {
 
     @Value("${spring.datasource.driverClassName}") String driverClassName;

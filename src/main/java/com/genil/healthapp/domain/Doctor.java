@@ -41,7 +41,7 @@ import javax.persistence.Table;
                 query = "from Doctor d where d.user.id = :id"
         ),@NamedQuery(
                 name = "findByLocationAndSpeciality",
-                query = "from Doctor d where d.specialityCode = :specialityCode and d.location= :location"
+                query = "from Doctor d where d.specialityCode = :specialityCode"
         ),
 })
 public class Doctor  implements java.io.Serializable {

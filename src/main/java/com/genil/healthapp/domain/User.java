@@ -25,6 +25,10 @@ import javax.persistence.Table;
     	name = "findByEmailAndPassword",
     	query = "from User u where u.email= :email and u.password = :password"
     	),
+	@NamedQuery(
+			name = "findByLastName",
+			query = "from User u where u.lastname = :lastname"
+	),
 })
 public class User {
 	
